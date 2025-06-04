@@ -6,6 +6,7 @@ import User from './getuser/User';
  import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddUser from './adduser/AddUser';
 import Update from './updateUser/Update';
+import CategoryPage from './getcategory/CategoryPage';
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
     {
       path:"/update/:id",
       element: <Update/>
+    },
+    {
+      path:"/category",
+      element: <CategoryPage/>
     }
   ])
   

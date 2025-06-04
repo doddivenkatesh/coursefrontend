@@ -44,7 +44,7 @@ const AddUser = () => {
       <form className='addUserForm' onSubmit={submitForm}>
         <div className="inputGroup">
           <label htmlFor="name" >Name</label>
-          <input type="text" name="name" id="name"  onChange={inputHandler} autoComplete='off' placeholder="Enter your name"/>
+          <input type="text" id="name"   name="name" onChange={inputHandler} autoComplete='off' placeholder="Enter your name"/>
         </div>
       <div className="inputGroup">
           <label htmlFor="email" >E-mail</label>
