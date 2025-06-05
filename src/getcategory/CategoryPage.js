@@ -13,7 +13,6 @@ import {
 import axios from "axios";
 import CategoryFormModal from "./CategoryFormModal ";
 
-
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
@@ -22,12 +21,13 @@ const CategoryPage = () => {
   const [expandedCategoryId, setExpandedCategoryId] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const baseURL = "http://localhost:8080"; // Adjust this to your API base URL
   useEffect(() => {
     fetchCategories();
   }, []);
 
   const fetchCategories = async () => {
-    const response = await axios.get("/api/categories");
+    const response = await axios.get(`${baseURL}/api/categories`);
     setCategories(response.data);
     setFilteredCategories(response.data);
   };
@@ -39,7 +39,7 @@ const CategoryPage = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm("Delete this category?")) {
-      await axios.delete(`/api/categories/${id}`);
+      await axios.delete(`${baseURL}/api/categories/${id}`); //(`/api/categories/${id}`);
       fetchCategories();
     }
   };
@@ -120,7 +120,8 @@ const CategoryPage = () => {
                     size="sm"
                     onClick={() => toggleSubcategories(cat.id)}
                   >
-                    {expandedCategoryId === cat.id ? "Hide" : "View"} Subcategories
+                    {expandedCategoryId === cat.id ? "Hide" : "View"}{" "}
+                    Subcategories
                   </Button>
                 </td>
               </tr>

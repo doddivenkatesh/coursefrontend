@@ -14,7 +14,7 @@ import axios from "axios";
 
 const CategoryFormModal = ({ isOpen, toggle, category, onSave }) => {
   const [name, setName] = useState("");
-
+  const baseURL = "http://localhost:8080"; // Adjust this to your API base URL
   useEffect(() => {
     if (category) {
       setName(category.name);
@@ -29,9 +29,9 @@ const CategoryFormModal = ({ isOpen, toggle, category, onSave }) => {
 
     try {
       if (category) {
-        await axios.put(`/api/categories/${category.id}`, { name });
+        await axios.put(`${baseURL}/api/categories/${category.id}`, { name });
       } else {
-        await axios.post("/api/categories", { name });
+        await axios.post(`${baseURL}/api/categories`, { name });
       }
       toggle();
       onSave();
