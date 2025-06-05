@@ -1,12 +1,13 @@
 
 import './App.css';
-import User from './getuser/User';
+import User from './LMS/user/getuser/User';
  //import ModelView from './Components/ModelView'
  //import { BrowserRouter as Router, Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom';
  import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AddUser from './adduser/AddUser';
-import Update from './updateUser/Update';
-import CategoryPage from './getcategory/CategoryPage';
+import AddUser from './LMS/user/adduser/AddUser';
+import Update from './LMS/user/updateUser/Update';
+import CategoryPage from './LMS/category/CategoryPage';
+
 
 function App() {
 
@@ -32,9 +33,10 @@ function App() {
 
   return (
     <div >
+        
       <RouterProvider router={route}></RouterProvider>
       
-    
+   
       
      {/* <Router>
       <Routes>
