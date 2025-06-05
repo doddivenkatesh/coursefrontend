@@ -1,42 +1,39 @@
+import "./App.css";
 
-import './App.css';
-import User from './getuser/User';
- //import ModelView from './Components/ModelView'
- //import { BrowserRouter as Router, Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom';
- import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AddUser from './adduser/AddUser';
-import Update from './updateUser/Update';
-import CategoryPage from './getcategory/CategoryPage';
+//import ModelView from './Components/ModelView'
+//import { BrowserRouter as Router, Routes, Route, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddUser from "./LMS/user/adduser/AddUser";
+import Update from "./LMS/user/updateUser/Update";
+import CategoryPage from "./LMS/category/CategoryPage";
+import User from "./ReduxConcepts/User";
 
 function App() {
-
   const route = createBrowserRouter([
     {
-      path:"/",
-      element: <User />
+      path: "/",
+      element: <User />,
     },
     {
-      path:"/add",
-      element: <AddUser/>
+      path: "/add",
+      element: <AddUser />,
     },
     {
-      path:"/update/:id",
-      element: <Update/>
+      path: "/update/:id",
+      element: <Update />,
     },
     {
-      path:"/category",
-      element: <CategoryPage/>
-    }
-  ])
-  
+      path: "/category",
+      element: <CategoryPage />,
+    },
+  ]);
 
   return (
-    <div >
+    <div>
+      <User />
       <RouterProvider router={route}></RouterProvider>
-      
-    
-      
-     {/* <Router>
+
+      {/* <Router>
       <Routes>
           <Route path="/adduser" element={<User />} />
           <Route path="/" element={<AddUser />} />

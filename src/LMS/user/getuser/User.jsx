@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import MainLayout from "../../sidebar/Sidebar";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -42,6 +43,7 @@ const User = () => {
       });
   };
   return (
+    <MainLayout>
     <div className="userTable">
       <Link to="/add" type="button" class="btn btn-primary">
         Add User <i class="fa-solid fa-user-plus"></i>
@@ -94,6 +96,7 @@ const User = () => {
         </table>
       )}
     </div>
+    </MainLayout>
   );
 };
 

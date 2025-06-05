@@ -14,7 +14,10 @@ import axios from "axios";
 
 const CategoryFormModal = ({ isOpen, toggle, category, onSave }) => {
   const [name, setName] = useState("");
-  const baseURL = "http://localhost:8080"; // Adjust this to your API base URL
+
+
+  //const baseUrl = process.env.REACT_APP_API_BASE_URL || "/api";
+   const baseUrl = "http://localhost:8080/api";
   useEffect(() => {
     if (category) {
       setName(category.name);
@@ -25,13 +28,19 @@ const CategoryFormModal = ({ isOpen, toggle, category, onSave }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //const name = "   ";
     if (!name.trim()) return;
+    // This line will run because name.trim() === "" → falsy → !"" === true
 
     try {
       if (category) {
-        await axios.put(`${baseURL}/api/categories/${category.id}`, { name });
+
+       
+     
+        await axios.put(`${baseUrl}/categories/${category.id}`, { name });
       } else {
-        await axios.post(`${baseURL}/api/categories`, { name });
+        await axios.post(`${baseUrl}/categories`, {name});
+
       }
       toggle();
       onSave();

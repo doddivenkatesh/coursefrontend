@@ -4,6 +4,7 @@ import './adduser.css'
 import { useState } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import MainLayout from '../../sidebar/Sidebar'
 const AddUser = () => {
 
     const  users ={
@@ -36,6 +37,7 @@ const AddUser = () => {
     
 
   return (
+    <MainLayout>
     <div className='addUser'>
      
       <Link to="/" type="button" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Back</Link>
@@ -61,6 +63,7 @@ const AddUser = () => {
       </form>
       
     </div>
+    </MainLayout>
   )
 }
 

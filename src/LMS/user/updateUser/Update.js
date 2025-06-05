@@ -4,6 +4,7 @@ import './update.css'
 import { useState,useEffect} from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import MainLayout from '../../sidebar/Sidebar'
 const UpdateUser = () => {
 
     const  users ={
@@ -48,6 +49,7 @@ const UpdateUser = () => {
     
 
   return (
+      <MainLayout>
     <div className='addUser'>
      
       <Link to="/" type="button" class="btn btn-secondary"><i class="fa-solid fa-backward"></i> Back</Link>
@@ -73,6 +75,7 @@ const UpdateUser = () => {
       </form>
       
     </div>
+    </MainLayout>
   )
 }
 
