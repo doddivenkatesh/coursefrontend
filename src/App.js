@@ -6,7 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddUser from "./LMS/user/adduser/AddUser";
 import Update from "./LMS/user/updateUser/Update";
 import CategoryPage from "./LMS/category/CategoryPage";
-import User from "./ReduxConcepts/User";
+
+import User from "./LMS/user/getuser/User";
+import RandomUser from "./reduxconcepts/RandomUser";
 
 function App() {
   const route = createBrowserRouter([
@@ -26,11 +28,14 @@ function App() {
       path: "/category",
       element: <CategoryPage />,
     },
+    {
+      path: "/randomapi",
+      element: <RandomUser />,
+    },
   ]);
 
   return (
     <div>
-      <User />
       <RouterProvider router={route}></RouterProvider>
 
       {/* <Router>

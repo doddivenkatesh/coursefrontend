@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
   Row,
   Col,
@@ -8,16 +8,16 @@ import {
   Button,
   ModalFooter,
   Label,
-} from "reactstrap"
-import PropTypes from "prop-types"
-import "../Styles/Courses.css"
-import { Card, CardBody } from "reactstrap"
-import { AvForm, AvField, AvGroup } from "availity-reactstrap-validation"
+} from "reactstrap";
+import PropTypes from "prop-types";
+import "../Styles/Courses.css";
+import { Card, CardBody } from "reactstrap";
+import { AvForm, AvField, AvGroup } from "availity-reactstrap-validation";
 
 const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
   const closeModal = () => {
-    toggleModal()
-  }
+    toggleModal();
+  };
   return (
     <>
       <Modal
@@ -36,7 +36,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         name="courseTitle"
                         label={
                           <>
-                             Course Title
+                            Course Title
                             <span className="asterisk">*</span>
                           </>
                         }
@@ -71,7 +71,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         name="containsAssessment"
                         label={
                           <>
-                            Contains Assessment? 
+                            Contains Assessment?
                             <span className="asterisk">*</span>
                           </>
                         }
@@ -89,7 +89,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         name="sponsor"
                         label={
                           <>
-                             Sponsor
+                            Sponsor
                             <span className="asterisk">*</span>
                           </>
                         }
@@ -97,7 +97,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         value={adminValue.sponsor}
                         className="form-control dropdown-carrot"
                       >
-                           <option>Emirates Airline</option>
+                        <option>Emirates Airline</option>
                         <option>Emirates partner</option>
                       </AvField>
                     </div>
@@ -106,7 +106,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         name="difficultyLevel"
                         label={
                           <>
-                             Difficulty Level
+                            Difficulty Level
                             <span className="asterisk">*</span>
                           </>
                         }
@@ -114,9 +114,9 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         value={adminValue.difficultyLevel}
                         className="form-control dropdown-carrot"
                       >
-                           <option>Beginner</option>
-                              <option>Intermediate</option>
-                 
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+
                         <option>Advaced</option>
                       </AvField>
                     </div>
@@ -147,7 +147,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                           </>
                         }
                         type="text"
-                          placeholder="Enter duration in minutes "
+                        placeholder="Enter duration in minutes "
                         value={adminValue.courseDuration}
                         required
                       />
@@ -157,7 +157,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         name="sourceType"
                         label={
                           <>
-                             Source Type
+                            Source Type
                             <span className="asterisk">*</span>
                           </>
                         }
@@ -165,7 +165,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                         value={adminValue.sourceType}
                         className="form-control dropdown-carrot"
                       >
-                           <option>Internal</option>
+                        <option>Internal</option>
                         <option>External</option>
                       </AvField>
                     </div>
@@ -187,7 +187,7 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
                           }
                           disabled={!adminValue.courseVideoUrl}
                         >
-                          Course_package.zip 
+                          Course_package.zip
                           <i className="fas fa-trash-alt me-2" />
                         </button>
                       </div>
@@ -258,8 +258,8 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
         </ModalFooter>
       </Modal>
     </>
-  )
-}
+  );
+};
 
 // EditCourseModal.propTypes = {
 //   showEditModal: PropTypes.bool,
@@ -267,4 +267,4 @@ const EditCourseModal = ({ showEditModal, toggleModal, adminValue = {} }) => {
 //   adminValue: PropTypes.object,
 // }
 
-export default EditCourseModal
+export default EditCourseModal;
