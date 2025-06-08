@@ -8,7 +8,7 @@ import Update from "./LMS/user/updateUser/Update";
 import CategoryPage from "./LMS/category/CategoryPage";
 
 import User from "./LMS/user/getuser/User";
-import RandomUser from "./reduxconcepts/RandomUser";
+import RandomUser from "./Reduxconcepts/RandomUser";
 
 function App() {
   const route = createBrowserRouter([
