@@ -1,10 +1,13 @@
-// ReduxConcepts/saga.js
 import { put, call, takeEvery } from "redux-saga/effects";
 
-function* asyncFetchUser() {
+function* asyncFetchPosts() {
   yield put({ type: "FETCHING" });
+
   try {
-    const response = yield call(fetch, "hts://randomuser.me/api");
+    const response = yield call(
+      fetch,
+      "https://jsonplaceholder.typicode.com/users"
+    );
     const data = yield call([response, "json"]);
     yield put({ type: "FETCH_SUCCESS", payload: data });
   } catch (error) {
@@ -12,6 +15,6 @@ function* asyncFetchUser() {
   }
 }
 
-export function* watchUserActions() {
-  yield takeEvery("FETCH_USER", asyncFetchUser);
+export function* watchPostsActions() {
+  yield takeEvery("FETCH_POSTS", asyncFetchPosts);
 }

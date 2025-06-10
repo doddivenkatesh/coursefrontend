@@ -1,74 +1,3 @@
-// import React from "react";
-// import "./sidebar.css";
-// import { useState } from "react";
-// import { Button } from "reactstrap";
-// const Sidebar = () => {
-//   const [sidebarOpen, setSidebarOpen] = useState(true);
-//   return (
-//     <div>
-//       {/* Sidebar */}
-//       {/* <div className="sidebar bg-light p-3" style={{ width: "250px", height: "100vh" }}> */}
-//       <div
-//         className={`sidebar bg-light p-3 ${sidebarOpen ? "" : "d-none"}`}
-//         style={{ width: "250px", height: "100vh" }}
-//       >
-//         <h5>Menu</h5>
-
-//         <Button color="secondary" onClick={() => setSidebarOpen(!sidebarOpen)}>
-//           {sidebarOpen ? "Hide" : "Show"} Menu
-//         </Button>
-
-//         <ul className="list-unstyled">
-//           <li>
-//             <a href="/dashboard">Dashboard</a>
-//           </li>
-//           <li>
-//             <a href="/categories">Categories</a>
-//           </li>
-//           <li>
-//             <a href="/courses">Courses</a>
-//           </li>
-//           <li>
-//             <a href="/users">Users</a>
-//           </li>
-//           <li>
-//             <a href="/category">Category</a>
-//           </li>
-//           <li>
-//             <a href="/">Logout</a>
-//           </li>
-//           <li>
-//             <a href="/add">Add User</a>
-//           </li>
-//           <li>
-//             <a href="/getuser">Get User</a>
-//           </li>
-//           <li>
-//             <a href="/addcategory">Add Category</a>
-//           </li>
-//           <li>
-//             <a href="/getcategory">Get Category</a>
-//           </li>
-//           <li>
-//             <a href="/addcourse">Add Course</a>
-//           </li>
-//           <li>
-//             <a href="/getcourse">Get Course</a>
-//           </li>
-//           <li>
-//             <a href="/addsubcategory">Add Subcategory</a>
-//           </li>
-//           <li>
-//             <a href="/getsubcategory">Get Subcategory</a>
-//           </li>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Sidebar;
-
-// MainLayout.js
 import React, { useState } from "react";
 import { Container, Button } from "reactstrap";
 import "./sidebar.css"; // Sidebar styles
@@ -99,6 +28,9 @@ const MainLayout = ({ children }) => {
           </li>
           <li>
             <a href="/randomapi">randomapi</a>
+          </li>
+          <li>
+            <a href="/posts">posts</a>
           </li>
         </ul>
       </div>

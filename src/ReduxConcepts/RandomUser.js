@@ -8,7 +8,7 @@ const RandomUser = () => {
 
   const dispatch = useDispatch();
   const fetchUser = () => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({ type: "FETCH_USER  " });
   };
 
   if (apiStatus === "init") {

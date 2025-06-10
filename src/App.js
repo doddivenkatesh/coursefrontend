@@ -8,7 +8,8 @@ import Update from "./LMS/user/updateUser/Update";
 import CategoryPage from "./LMS/category/CategoryPage";
 
 import User from "./LMS/user/getuser/User";
-import RandomUser from "./Reduxconcepts/RandomUser";
+import RandomUser from "./ReduxConcepts/RandomUser";
+import Posts from "./ReduxConcepts/Posts/Posts";
 
 function App() {
   const route = createBrowserRouter([
@@ -31,6 +32,10 @@ function App() {
     {
       path: "/randomapi",
       element: <RandomUser />,
+    },
+    {
+      path: "/posts",
+      element: <Posts />,
     },
   ]);
 
