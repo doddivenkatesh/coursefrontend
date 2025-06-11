@@ -8,6 +8,9 @@ function* asyncFetchPosts() {
       fetch,
       "https://jsonplaceholder.typicode.com/users"
     );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = yield call([response, "json"]);
     yield put({ type: "FETCH_SUCCESS", payload: data });
   } catch (error) {

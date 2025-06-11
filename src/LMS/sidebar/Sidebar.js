@@ -32,6 +32,9 @@ const MainLayout = ({ children }) => {
           <li>
             <a href="/posts">posts</a>
           </li>
+          <li>
+            <a href="/userList">userList</a>
+          </li>
         </ul>
       </div>
 

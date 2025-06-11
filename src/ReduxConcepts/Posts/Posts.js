@@ -10,23 +10,40 @@ const Posts = () => {
   const fetchPosts = () => {
     dispatch({ type: "FETCH_POSTS" });
   };
-  if (apiStatus === "init") {
-    return <button onClick={fetchPosts}>load your first post</button>;
-  }
-  if (apiStatus === error) {
+
+  
+   if (apiStatus === "failed" || error) {
     return (
       <div>
-        <b style={{ color: "red" }}>{error}</b>
+        <b style={{ color: "red" }}>{error || "Something went wrong"}</b>
         <button onClick={fetchPosts}>try again</button>
       </div>
     );
   }
+    if (!Array.isArray(data)) {
+    return (
+      <div>
+        <b style={{ color: "red" }}>No data available</b>
+        <button onClick={fetchPosts}>Reload</button>
+      </div>
+    );
+  }
+
+  // if (apiStatus === error) {
+  //   return (
+  //     <div>
+  //       <b style={{ color: "red" }}>{error}</b>
+  //       <button onClick={fetchPosts}>try again</button>
+  //     </div>
+  //   );
+  // }
   if (apiStatus === "loading") {
     return <h1>Loading...</h1>;
   }
 
   return (
     <div>
+    
       {data.map((user) => (
         <div
           key={user.id}

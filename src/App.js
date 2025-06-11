@@ -10,6 +10,7 @@ import CategoryPage from "./LMS/category/CategoryPage";
 import User from "./LMS/user/getuser/User";
 import RandomUser from "./ReduxConcepts/RandomUser";
 import Posts from "./ReduxConcepts/Posts/Posts";
+import UserList from "./Components/CrudOperation/UserList";
 
 function App() {
   const route = createBrowserRouter([
@@ -37,12 +38,17 @@ function App() {
       path: "/posts",
       element: <Posts />,
     },
+    {
+      path:"/userList",
+      element:<UserList/>
+
+    }
   ]);
 
   return (
     <div>
       <RouterProvider router={route}></RouterProvider>
-
+ 
       {/* <Router>
       <Routes>
           <Route path="/adduser" element={<User />} />
